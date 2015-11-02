@@ -1,0 +1,22 @@
+<%= render 'layouts/header' %>
+<div class="content">
+  <div id="submenu">
+    <ul><li>
+    <%= link_to "Back", user_date_object_path(@user, @date_object) %>
+    </li></ul>
+  </div>
+
+  <div class="input">
+    <table class="center">
+      <%= form_for ([@user, @date_object, @record]) do |f| %>
+        <tr>
+        <td><%= f.collection_select(:task_id, Task.all, :id, :name )%></td>
+        <td><%= f.number_field :hours, :placeholder => 'Hours' %></td>
+        <td><%= f.number_field :minutes, :placeholder => 'Minutes' %></td>
+        <td><%= f.submit 'Save' %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

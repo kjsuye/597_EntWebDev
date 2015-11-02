@@ -1,0 +1,37 @@
+<% provide(:title, "Log in") %>
+  <div class="title">
+    <a href="">Log In</a>
+  </div>
+
+  <div id="nav-bar">
+    <ul><li class='last'><%= link_to 'Back', '/' %></li></ul>
+  </div>
+
+<div class="content">
+  <div class="input">
+    <table class="center">
+      <tr><td>
+        <%= form_for(:session, url: login_path) do |f| %>
+        <table class="center">
+          <tr>
+            <td><%= f.label :email %></td>
+            <td><%= f.email_field :email, :placeholder => 'Email' %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :password %></td>
+            <td><%= f.password_field :password, :placeholder => 'Password' %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td align="right"><%= f.submit "Log In" %></td>
+          </tr>
+        </table>
+        <% end %>
+      </td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="footer">
+  &copy;2015 Kelsey Suyehira
+</div>

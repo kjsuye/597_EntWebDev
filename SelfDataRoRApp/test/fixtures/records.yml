@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hours: 1
+  minutes: 1
+  task_id: 1
+  date_object_id: 
+
+two:
+  hours: 1
+  minutes: 1
+  task_id: 1
+  date_object_id: 

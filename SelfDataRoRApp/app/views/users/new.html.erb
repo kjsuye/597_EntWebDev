@@ -1,0 +1,47 @@
+    <% provide(:title, 'Sign up') %>
+    <div class="title">
+      <a href="">Sign Up</a>
+    </div>
+
+    <div id="nav-bar">
+      <ul><li class='last'><%= link_to 'Back', '/' %><li></ul>
+    </div>
+
+    <div class="content">
+      <div class="input">
+        <table class="center">
+          <tr><td>
+            <%= form_for(@user) do |f| %>
+              <%= render 'shared/error_messages' %>
+              <table class="center">
+                <tr>
+                  <td><%= f.label :name%></td>
+                  <td><%= f.text_field :name, :placeholder => 'Name' %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :email %></td>
+                  <td><%= f.email_field :email, :placeholder => 'Email' %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :password %></td>
+                  <td><%= f.password_field :password, :placeholder => 'Password'%></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :password_confirmation, "Confirmation" %></td>
+                  <td><%= f.password_field :password_confirmation, :placeholder => 'Password Confirmation' %></td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td align="center"><%= f.submit "Create my account" %></td>
+                </tr>
+              </table>
+              <% end %>
+          </td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="footer">
+      &copy;2015 Kelsey Suyehira
+    </div>
+

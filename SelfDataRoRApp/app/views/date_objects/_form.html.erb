@@ -1,0 +1,11 @@
+<%= form_for([current_user, current_user.date_objects.build]) do |f| %>
+  <p>
+    <%= f.date_select :day  %>
+  </p>
+  <p>
+    <%= f.submit "Go To Date" %>
+  </p>
+<% end %>
+
+
+
