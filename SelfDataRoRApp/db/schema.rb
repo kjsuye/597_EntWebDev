@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151031184053) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "date_objects", force: :cascade do |t|
     t.date     "day"
     t.integer  "user_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20151031184053) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "date_objects", ["user_id"], name: "index_date_objects_on_user_id"
+  add_index "date_objects", ["user_id"], name: "index_date_objects_on_user_id", using: :btree
 
   create_table "records", force: :cascade do |t|
     t.integer  "hours"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20151031184053) do
     t.datetime "updated_at",     null: false
   end
 
-  add_index "records", ["date_object_id"], name: "index_records_on_date_object_id"
+  add_index "records", ["date_object_id"], name: "index_records_on_date_object_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20151031184053) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +54,9 @@ ActiveRecord::Schema.define(version: 20151031184053) do
     t.string   "password_digest"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "date_objects", "users"
+  add_foreign_key "records", "date_objects"
+  add_foreign_key "tasks", "users"
 end
