@@ -1,0 +1,7 @@
+<%= form_for([@user, @date_object, @record]) do |f| %>
+        <tr><%= f.collection_select(:task_id, Task.all, :id, :name )%>
+        <td><%= f.number_field :hours, :placeholder => 'Hours' %></td>
+        <td><%= f.number_field :minutes, :placeholder => 'Minutes' %></td>
+        <td><%= f.submit 'Save' %></td>
+        </tr>
+<% end %>

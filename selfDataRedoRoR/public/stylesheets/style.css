@@ -1,0 +1,285 @@
+body {
+	margin:0;  
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #9CC5D6;
+	color: #000444;
+}
+
+.title > a {
+	font-size: 50px;
+	color: #562C99;
+	text-decoration: none;
+	margin: 50 0 -30 0;
+	padding: 0;
+	text-align: left;
+	margin-left: 125px;
+	margin-top: 50px;
+	display: inline-block;
+}
+
+#nav-bar {
+	font-weight: 400;
+	font-size: 15px;
+	font-family: 'Ubuntu';
+	letter-spacing: 8px;
+	text-transform: uppercase;
+}
+
+#nav-bar > ul {
+	margin: 0 0 25 0;
+	padding: 0;
+	text-align: right;
+	margin-right: 100px;
+}
+
+#nav-bar > ul > li {
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-color: #562C99;
+	display: inline-block;
+}
+
+#nav-bar > ul > li > a {
+	padding: 0px 10px;
+	line-height: 20px;
+	text-decoration: none;
+	font-size: 20px;
+	letter-spacing: .1em;
+	color: #562C99;
+}
+
+#nav-bar > ul > li > a:hover {
+	color: #FCE12D;
+}
+
+#nav-bar #currentPage a{
+	font-weight: 500;
+}
+
+#nav-bar .last {
+	border-right: none;
+}
+
+
+
+
+.content {
+	padding: 15px 50px;
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	line-height: 15px;
+	margin: 0px 100px;
+}
+
+
+.signIn {
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	margin: 15px 50px;
+/*	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -175px;
+	margin-left: -250px;
+	margin-right: auto;
+*/	padding: 25px 50px;
+}
+
+.signIn input {
+}
+
+.signUp {
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	margin: 15px 50px;
+	text-align: center;
+/*	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -175px;
+	margin-left: -250px;
+*/	padding: 25px 100px;
+}
+
+.signUp > a {
+	padding: 0px 30px 0px 30px;
+}
+
+.signUp input {
+}
+
+
+#flash {
+	margin: 15px 50px;
+	color: #F72A68;
+}
+
+
+
+.profile {
+	font-size: 25px;
+	text-align: center;
+	padding: 15px 20px;
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	line-height: 15px;
+	margin: 10px 50px;	
+}
+
+.labels {
+	text-align: center;
+	padding: 15px 20px;
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	line-height: 15px;
+	margin: 25px 50px;
+}
+
+table.center {
+	margin-left:auto; 
+	margin-right:auto;
+	padding: 15px 0px 15px 40px;
+}
+
+table.center th {
+	padding: 5px 0px 12px 0px;;
+}
+
+table.center td {
+	padding: 2px 8px;
+}
+
+.top {
+	text-align: center;
+	padding: 25px 0px 8px 0px;
+	font-size: 20px;
+}
+
+.calendar {
+	padding: 15px 20px;
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	margin: 10px 50px;
+}
+
+.input{
+	padding: 15px 20px;
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	line-height: 15px;
+	margin: 10px 50px;
+}
+
+
+
+
+
+#submenu {
+	font-weight: 300;
+	font-size: 20px;
+	font-family: 'Ubuntu';
+	letter-spacing: 8px;
+	margin: 25px 100px;
+}
+
+#submenu > ul {
+	margin: 10 0 10 0;
+	padding: 0;
+	text-align: center;
+}
+
+#submenu > ul > li {
+	display: inline-block;
+}
+
+#submenu > ul > li > a {
+	padding: 0px 10px;
+	line-height: 25px;
+	text-decoration: none;
+	font-size: 20px;
+	letter-spacing: .1em;
+	color: #562C99;
+}
+
+#submenu > ul > li > a:hover {
+	color: #32B2C2;
+}
+
+#submenu #currentDisplay a {
+	font-weight: 500;
+} 
+
+
+
+.select {
+	padding: 15px 0px;
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	line-height: 15px;
+	margin: 10px 50px;
+	text-align: center;
+}
+
+.select > ul {
+	margin: 10 0 10 0;
+	padding: 0;
+	text-align: center;
+}
+
+.select > ul > li {
+	display: inline-block;
+}
+
+
+#canvas_container_bar{
+   	border: solid 1px #D1D8E1;
+	margin: 10 auto;
+	width: 600px;
+	height: 400px;
+}
+
+#canvas_container_pie{
+   	border: solid 1px #D1D8E1;
+	margin: 10 auto;
+	width: 600px;
+	height: 400px;
+}
+
+
+
+#datepicker-container{
+	text-align:center;
+	padding: 15px 20px;
+	border: solid 1px #D1D8E1;
+	background-color: #EDF4F5;
+	line-height: 15px;
+	margin: 25px 50;
+}
+
+#datepicker-center{
+	display:inline-block;
+	margin:0 auto;
+	padding: 25px;
+}
+
+
+
+
+
+#footer {
+	padding: 15px;
+	text-align: center;
+	position: relative;
+	font-size: 11px;
+	list-style: none;
+}
+
+#footer > a {
+        font-size: 25px;
+        color: #562C99;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+}
+
+

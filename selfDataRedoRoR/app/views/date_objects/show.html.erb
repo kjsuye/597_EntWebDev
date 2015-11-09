@@ -1,0 +1,33 @@
+<%= render 'layouts/header' %>
+
+	<div class="content">
+
+		<div id="submenu">
+			<ul>
+				<li>
+<!--					<a id="previous" href="" >Previous</a>
+-->				</li>
+				<li>
+					<%= link_to "Calendar", new_user_date_object_path(current_user) %>
+				</li>
+				<li>
+<!--					<a  id="next" href="">Next</a>
+-->				</li>
+			</ul>
+		</div>
+
+		<div class="input">
+		<table class="center">
+			<caption> <%= @date_object.day.strftime("%A, %B %d") %> </caption>
+			<tr><th> Activity </th> <th> Time </th> </tr>
+
+			<%= render @date_object.records %>
+
+		</table>
+	<table class="center"><caption>
+	<%= button_to 'Add New Amount', new_user_date_object_record_path(@user, @date_object), method: :get, class: "center" %>
+	</caption></table>
+	</div>
+
+<%= render 'layouts/footer' %>
+

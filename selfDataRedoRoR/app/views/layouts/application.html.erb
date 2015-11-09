@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SelfData</title>
+  <%= stylesheet_link_tag "style.css" %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+                <%= stylesheet_link_tag "application" %>
+                <%= javascript_include_tag 'application' %>
+                <%= stylesheet_link_tag 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css' %> 
+                <%= javascript_include_tag 'jquery-1.10.2.min.js' %>
+                <%= javascript_include_tag 'http://code.jquery.com/ui/1.10.3/jquery-ui.js' %>
+                <%= javascript_include_tag 'jCal.js' %>
+                <%= javascript_include_tag 'cal.js' %>
+                <%= javascript_include_tag 'date.js' %>
+                <%= javascript_include_tag 'raphael/raphael-min.js' %>
+                <%= javascript_include_tag 'raphael/g.raphael-min.js' %>
+                <%= javascript_include_tag 'raphael/g.bar-min.js' %>
+                <%= javascript_include_tag 'raphael/g.pie-min.js' %>
+                <%= javascript_include_tag 'graphPie.js' %>
+                <%= javascript_include_tag 'graphBar.js' %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
