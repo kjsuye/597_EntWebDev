@@ -1,8 +1,0 @@
-<%= form_for([@user, @user.tasks.build]) do |f| %>
-    <tr>
-    <td><%= f.text_field :name, :placeholder => 'New Name' %> </td>
-    <td><%= f.text_field :category, :placeholder => 'New Category' %> </td>
-    <td><%= f.submit 'Save Task' %> </td>
-    </tr>
-
-<% end %>
