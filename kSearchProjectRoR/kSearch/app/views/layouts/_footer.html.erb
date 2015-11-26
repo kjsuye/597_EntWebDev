@@ -4,7 +4,13 @@
   </small>
   <nav>
     <ul>
-      <li><%= link_to "Admin Log In",   '#' %></li>
+      <% if admin_logged_in? %>
+        <li><%= link_to "Manage", admin_user_manage_path(current_admin_user.id) %></li>
+        <li><%= link_to "Data", admin_user_path(current_admin_user.id) %></li>
+        <li><%= link_to "Admin Log Out", admin_logout_path, method: "delete" %></li>
+      <% else %>
+        <li><%= link_to "Admin Log In",  admin_login_path %></li>
+      <% end %>
     </ul>
   </nav>
 </footer>

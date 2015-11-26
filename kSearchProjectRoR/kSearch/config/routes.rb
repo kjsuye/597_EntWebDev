@@ -1,7 +1,32 @@
 Rails.application.routes.draw do
+
+#  get 'student_sessions/new'
+
+#  get 'student_users/new'
+
+#  get 'codes/new'
+
+#  get 'sessions/new'
+
+#  get 'admin_users/new'
+
   root 'static_pages#home'
   get  'help' => 'static_pages#help'
   get  'about' => 'static_pages#about'
+
+  get    'admin_login'   => 'admin_sessions#new'
+  post   'admin_login'   => 'admin_sessions#create'
+  delete 'admin_logout'  => 'admin_sessions#destroy'
+
+  get    'student_signup' => 'student_users#new'
+  delete 'student_logout'  => 'student_sessions#destroy'
+
+  resources :admin_users, :only => [:show]
+   get 'admin_users/:id/manage' => 'admin_users#manage', as: 'admin_user_manage'
+
+  resources :codes
+
+  resources :student_users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
