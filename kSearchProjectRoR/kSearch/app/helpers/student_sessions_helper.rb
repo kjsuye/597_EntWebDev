@@ -1,4 +1,5 @@
 module StudentSessionsHelper
+  include SearchHelper
 
   # Logs in the given user.
   def student_log_in(studentUser)
@@ -19,6 +20,7 @@ module StudentSessionsHelper
   def student_log_out
     session.delete(:user_id)
     @current_student_user = nil
+    GoogleCustomSearch.clear_results
   end
 
 end

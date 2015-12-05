@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126045201) do
+ActiveRecord::Schema.define(version: 20151204233058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20151126045201) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "queries", force: :cascade do |t|
+    t.string   "queryString"
+    t.json     "topLinks"
+    t.json     "linksClicked"
+    t.integer  "student_user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "queries", ["student_user_id"], name: "index_queries_on_student_user_id", using: :btree
+
   create_table "student_users", force: :cascade do |t|
     t.string   "logInCode"
     t.string   "searchOption"
@@ -43,4 +54,5 @@ ActiveRecord::Schema.define(version: 20151126045201) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "queries", "student_users"
 end

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include AdminSessionsHelper
   include StudentSessionsHelper
+  include SearchHelper
 
   def logged_in_admin_user
     unless admin_logged_in?

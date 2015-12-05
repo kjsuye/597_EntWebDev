@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+#  get 'queries/new'
+
+#  get 'search/new'
+
+#  get 'querys/new'
+
 #  get 'student_sessions/new'
 
 #  get 'student_users/new'
@@ -26,7 +32,9 @@ Rails.application.routes.draw do
 
   resources :codes
 
-  resources :student_users
+  resources :student_users do
+    resources :queries
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

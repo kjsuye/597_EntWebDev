@@ -3,4 +3,7 @@ class Code < ActiveRecord::Base
   def default_values
     self.timesUsed ||= 0
   end
+  validates :logInCode, presence: true
+  validates :searchOption, presence: true
+  validates :querySuggestion, presence: true
 end

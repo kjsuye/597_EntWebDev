@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+#Google API
+#gem 'google-api-client', '0.9.pre3', :require => 'google/api_client'
+#gem 'google-api-client', '~> 0.4.3', :require => 'google/api_client'
+#something about a bug with google client?
+#gem 'signet', git: "https://github.com/google/signet.git"
+gem 'google-api-client', '~> 0.7.1', :require => 'google/api_client'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

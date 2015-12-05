@@ -1,16 +1,20 @@
 class StudentUsersController < ApplicationController
  before_action :logged_in_student_user, only: [:show]
 
+ helper_method :get_search_results
+
   def show
     if session[:user_id] != params[:id].to_i
       redirect_to current_student_user
     else
       @student_user = StudentUser.find(params[:id])
+      @query = @student_user.queries.build
     end
   end
       
   def new
     @student_user = StudentUser.new
+    @query = @student_user.queries.build
   end
  
   def create
@@ -33,7 +37,17 @@ class StudentUsersController < ApplicationController
       flash.now[:danger] = 'Invalid Log In Code'
       render 'new'
     end
+    GoogleCustomSearch.initialize_search
   end
+
+  def get_search_results
+    data = GoogleCustomSearch.get_response
+    if data
+      data = JSON.parse data.response.body
+      items = data["items"]
+    end
+  end
+
  
   private
   

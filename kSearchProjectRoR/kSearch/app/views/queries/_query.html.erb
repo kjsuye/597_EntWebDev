@@ -1,0 +1,33 @@
+</br>
+<div class="center jumbotron">
+<table class="table table-hover" >
+  <thead>
+  <tr>
+    <th>Code</th>
+    <th>SearchOption</th>
+    <th>QuerySuggestion</th>
+    <th>Grade</th>
+    <th>StartTime</th>
+    <th>Session ID </th>
+    <th>Query String</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% StudentUser.find_each do |student| %>
+    <% student.queries.each do |query| %>
+    <tr>
+      <td><%= student.logInCode %></td>
+      <td><%= student.searchOption %></td>
+      <td><%= student.querySuggestion %></td>
+      <td><%= student.grade %></td>
+      <td><%= student.created_at %></td> 
+      <td><%= student.id %></td> 
+      <td><%= query.queryString %></td>
+    </tr>
+
+    <% end %>
+  <% end %>
+
+  </tbody>
+</table>
+</div>
