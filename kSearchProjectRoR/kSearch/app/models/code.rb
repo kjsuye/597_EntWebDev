@@ -6,4 +6,5 @@ class Code < ActiveRecord::Base
   validates :logInCode, presence: true
   validates :searchOption, presence: true
   validates :querySuggestion, presence: true
+  validates :search_intent, presence: true
 end

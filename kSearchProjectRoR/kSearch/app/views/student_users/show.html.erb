@@ -10,43 +10,44 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-
-</br>
-<%= link_to "Log Out", student_logout_path, method: "delete", class: "btn btn-md btn-info pull-right" %>
-</br>
 <!-- </br></br></br>
 <div class="center jumbotron">
   <gcse:searchbox></gcse:searchbox>
 </div>
   <gcse:searchresults></gcse:searchresults>
 -->
-<%= render 'queries/form'%>
-</br></br>
-<div class="col-md-12" >
-<hr class="col-md-10 col-md-offset-1" >
-</div>
-<% if !get_search_results.nil? %>
 
-<div class="col-md-10 col-md-offset-2" >
-<table>
-  <thead>
-  </thead>
-  <tbody>
-  <% get_search_results.each do |result| %>
-    <tr>
-      <td><%= link_to result["htmlTitle"].html_safe, result["link"], class: "title" %></td>
-    </tr>
-    <tr>
-      <td><%= result["htmlFormattedUrl"].html_safe %></td>
-    </tr>
-    <tr>
-      <td><%= result["htmlSnippet"].html_safe %></td>
-    </tr>
-    <tr>
-      <td><%= "</br>".html_safe %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-<% end %>
+</br>
+</br>
+  <%= render 'queries/form'%>
+</br></br>
+
+  <hr class="col-md-10 col-md-offset-1" />
+
+<div class="row" >
+<div class="col-md-6 col-md-offset-2" >
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+    <% if !get_search_results.nil? %>
+      <% get_search_results.each do |result| %>
+      <tr>
+        <td><%= link_to result["htmlTitle"].html_safe, result["link"], class: "title" %></td>
+      </tr>
+      <tr>
+        <td><%= result["htmlFormattedUrl"].html_safe %></td>
+      </tr>
+      <tr>
+        <td><%= result["htmlSnippet"].html_safe %></td>
+      </tr>
+      <tr>
+        <td><%= "</br>".html_safe %></td>
+      </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
 

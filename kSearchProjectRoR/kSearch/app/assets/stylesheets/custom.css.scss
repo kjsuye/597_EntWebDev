@@ -6,6 +6,10 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$bgDefault      : #9b59b6;
+$bgHighlight    : #8e44ad;
+$colDefault     : #ecf0f1;
+$colHover       : #ecdbff;
 
 /* universal */
 
@@ -54,11 +58,19 @@ h2 {
   color: $gray-light;
 }
 
+h3 {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
 p {
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.7em;
 }
 
+#aboutPageUL li {
+      font-size: 1.2em;
+}
 
 /* header */
 
@@ -102,3 +114,102 @@ footer {
     }
   }
 }
+
+.jumbotron {
+    background-color: #daf1f1;
+}
+
+/* --- Style --- */
+.navbar-default {
+    background-color: $bgDefault;
+    border-color: $bgHighlight;
+    .navbar-brand {
+        color: $colDefault;
+        &:hover, &:focus {
+            color: $colHover; }}
+    .navbar-nav {
+        > li {
+            > a {
+                color: $colDefault;
+                &:hover, &:focus {
+                    color: $colHover;   }}}
+        .active {
+            > a, > a:hover, > a:focus {
+                color: $colHover;
+                background-color: $bgHighlight; }}
+        .open {
+            > a, > a:hover, > a:focus {
+                color: $colHover;
+                background-color: $bgHighlight;
+                .caret {
+                    border-top-color: $colHover;
+                    border-bottom-color: $colHover; }}}
+        > .dropdown {
+            > a {
+                .caret {
+                    border-top-color: $colDefault;
+                    border-bottom-color: $colDefault; }
+                &:hover, &:focus {
+                    .caret {
+                        border-top-color: $colHover;
+                        border-bottom-color: $colHover; }}}}}
+    .navbar-toggle {
+        border-color: $bgHighlight;
+        &:hover, &:focus {
+            background-color: $bgHighlight; }
+        .icon-bar {
+            background-color: $colDefault; }}}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: $colDefault;
+        &:hover, &:focus {
+            color: $colHover;
+            background-color: $bgHighlight; }}
+}
+
+
+table th{
+  text-align: center;
+}
+
+        table.tableScroll {
+            width: 100%;
+        }
+
+        table.tableScroll thead, table.tableScroll tbody, table.tableScroll tr, table.tableScroll td, table.tableScroll th { display: block; }
+
+        table.tableScroll tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        table.tableScroll thead th {
+            height: 50px;
+            text-align: center;
+        }
+
+        table.tableScroll tbody {
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        table.tableScroll thead {
+            /* fallback */
+        }
+
+
+        table.tableScroll thead th {
+            width: 10%;
+            float: left;
+            border-bottom: 2px solid black;
+        }
+
+        table.tableScroll tbody td {
+            width: 10%;
+            float: left;
+            border-top: 1px solid #ddd;
+        }
+
+

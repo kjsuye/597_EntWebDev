@@ -3,8 +3,9 @@ class StudentUsersController < ApplicationController
 
  helper_method :get_search_results
 
+
   def show
-    if session[:user_id] != params[:id].to_i
+    if session[:student_user_id] != params[:id].to_i
       redirect_to current_student_user
     else
       @student_user = StudentUser.find(params[:id])
@@ -22,8 +23,7 @@ class StudentUsersController < ApplicationController
     currentCode = Code.where(logInCode: params[:student_user][:logInCode]).take
     if currentCode
       code_params = currentCode.attributes
-      code_params.except!("id")
-      code_params.except!("timesUsed")
+      code_params.except!("id", "timesUsed", "created_at", "updated_at")
       new_params = student_user_params.merge(code_params)
       @student_user = StudentUser.create(new_params)
       if @student_user.save
@@ -48,7 +48,14 @@ class StudentUsersController < ApplicationController
     end
   end
 
- 
+   def getAllData
+    @students = StudentUser.all
+    respond_to do |format|
+      format.csv { send_data @students.to_csv }
+    end
+  end
+
+
   private
   
     def student_user_params

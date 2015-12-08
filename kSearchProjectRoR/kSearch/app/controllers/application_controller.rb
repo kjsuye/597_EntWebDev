@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include AdminSessionsHelper
   include StudentSessionsHelper
   include SearchHelper
+  include QueriesHelper
 
   def logged_in_admin_user
     unless admin_logged_in?
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_student_user
-    unless student_logged_in?
+    unless student_logged_in? or admin_logged_in?
       flash[:danger] = "Please log in."
       redirect_to student_signup_path
     end

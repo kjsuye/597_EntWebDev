@@ -1,8 +1,12 @@
 class AdminUsersController < ApplicationController
  before_action :logged_in_admin_user, only: [:show, :manage]
 
+  def queries
+    getAllQueryData
+  end
+
   def manage
-    if session[:user_id] != params[:id].to_i
+    if session[:admin_user_id] != params[:id].to_i
       if current_admin_user
         redirect_to current_admin_user
       else
@@ -14,7 +18,7 @@ class AdminUsersController < ApplicationController
   end
 
   def show
-    if session[:user_id] != params[:id].to_i
+    if session[:admin_user_id] != params[:id].to_i
       redirect_to current_admin_user
     else
       @admin_user = AdminUser.find(params[:id])

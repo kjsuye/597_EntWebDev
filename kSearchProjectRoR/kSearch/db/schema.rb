@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204233058) do
+ActiveRecord::Schema.define(version: 20151206021134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,15 +30,17 @@ ActiveRecord::Schema.define(version: 20151204233058) do
     t.integer  "timesUsed"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "search_intent"
   end
 
   create_table "queries", force: :cascade do |t|
-    t.string   "queryString"
+    t.string   "originalQueryString"
     t.json     "topLinks"
     t.json     "linksClicked"
     t.integer  "student_user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "updatedQueryString"
   end
 
   add_index "queries", ["student_user_id"], name: "index_queries_on_student_user_id", using: :btree
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 20151204233058) do
     t.string   "school"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "search_intent"
   end
 
   add_foreign_key "queries", "student_users"

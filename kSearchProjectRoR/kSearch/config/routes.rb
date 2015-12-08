@@ -1,21 +1,5 @@
 Rails.application.routes.draw do
 
-#  get 'queries/new'
-
-#  get 'search/new'
-
-#  get 'querys/new'
-
-#  get 'student_sessions/new'
-
-#  get 'student_users/new'
-
-#  get 'codes/new'
-
-#  get 'sessions/new'
-
-#  get 'admin_users/new'
-
   root 'static_pages#home'
   get  'help' => 'static_pages#help'
   get  'about' => 'static_pages#about'
@@ -29,12 +13,15 @@ Rails.application.routes.draw do
 
   resources :admin_users, :only => [:show]
    get 'admin_users/:id/manage' => 'admin_users#manage', as: 'admin_user_manage'
+   get 'admin_users/:id/queries.csv' => 'student_users#getAllData', as: 'queries_csv', format: 'csv'
 
   resources :codes
 
   resources :student_users do
     resources :queries
   end
+
+  get '*path' => redirect('/')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

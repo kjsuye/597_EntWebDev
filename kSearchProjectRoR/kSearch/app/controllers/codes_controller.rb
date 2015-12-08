@@ -36,6 +36,6 @@ class CodesController < ApplicationController
  
   private
     def code_params
-      params.require(:code).permit(:logInCode, :searchOption, :querySuggestion)
+      params.require(:code).permit(:logInCode, :searchOption, :querySuggestion, :search_intent)
     end
 end
