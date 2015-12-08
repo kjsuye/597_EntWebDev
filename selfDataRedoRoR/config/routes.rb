@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'querys/new'
-
   get 'sessions/new'
 
   root               'welcome#index'
